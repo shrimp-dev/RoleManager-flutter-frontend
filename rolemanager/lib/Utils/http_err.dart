@@ -10,7 +10,7 @@ class HttpError {
       case 404:
         return "Internet fail!";
       case 500:
-        return "date request fail!";
+        return "Date request fail!";
       default:
         return "Unknown error!";
     }
