@@ -1,18 +1,18 @@
 class HttpError {
-  static String verificarResposta(int statusCode) {
+  static String responseVerify(int statusCode) {
     switch (statusCode) {
       case 200:
-        return "Postagem realizada com sucesso!";
+        return "Sucess request!";
       case 201:
-        return "Postagem criada com sucesso!";
+        return "Post created with sucess!";
       case 401:
-        return "Você não tem autorização para essa ação";
+        return "You dont have authorization!";
       case 404:
-        return "Falha na internet";
+        return "Internet fail!";
       case 500:
-        return "falha ao tentar adicionar a data";
+        return "date request fail!";
       default:
-        return "erro desconhecido";
+        return "Unknown error!";
     }
   }
 }
