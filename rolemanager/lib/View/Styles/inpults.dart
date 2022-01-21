@@ -14,13 +14,15 @@ class Inpults {
 
   static Widget posicionedinputl(
       String placeholder, TextEditingController _controller,
-      {double? top, double? bottom}) {
+      {double? top, double? bottom, bool? isTextPass, dynamic validator}) {
     return Positioned(
         top: top,
         left: 20,
         right: 20,
         bottom: bottom,
         child: TextFormField(
+          validator: validator,
+          obscureText: isTextPass ?? false,
           controller: _controller,
           decoration: InputDecoration(
               border: OutlineInputBorder(), hintText: placeholder),
