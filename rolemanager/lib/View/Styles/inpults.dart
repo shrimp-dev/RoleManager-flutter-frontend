@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Inpults {
-  static Widget inpultClassico(
-      //TODO: Ajeitar o inpult
+class Inputs {
+  static Widget inputTexFormFild(
+      TextEditingController _controller, String placeholder,
+      {double size = 12, bool isPass = false}) {
+    return TextFormField(
+      obscureText: isPass,
+      decoration: InputDecoration(
+        labelText: placeholder,
+        border: OutlineInputBorder(),
+      ),
+    );
+  }
+
+  static Widget inputClassico(
+      //TODO: Ajeitar o input
       String placeholder,
       TextEditingController _controller) {
     return TextField(
@@ -12,7 +24,7 @@ class Inpults {
     );
   }
 
-  static Widget posicionedinputl(
+  static Widget posicionedInput(
       String placeholder, TextEditingController _controller,
       {double? top, double? bottom, bool? isTextPass, dynamic validator}) {
     return Positioned(

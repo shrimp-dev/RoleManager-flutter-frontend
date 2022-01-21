@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teste/View/Page/login_page.dart';
 import 'package:teste/View/Styles/styles.dart';
+
+import '../ViewController/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          child: LoginPage(),
+          child: const LoginViewController(),
         ),
       ),
     );
