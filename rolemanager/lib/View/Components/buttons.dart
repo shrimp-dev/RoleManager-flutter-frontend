@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:rolemanager/Utils/Extension/textExtension.dart';
 
 class Button {
-  final bntPostStyle = ElevatedButton.styleFrom(
+  final btnPostStyle = ElevatedButton.styleFrom(
     padding: const EdgeInsets.all(20),
   );
 
-  Widget bntPost(String conteudo, VoidCallback onCLick) {
+  Widget btnPost(String content, VoidCallback onCLick) {
     return ElevatedButton(
-        style: bntPostStyle, onPressed: onCLick, child: Text(conteudo));
+        style: btnPostStyle, onPressed: onCLick, child: Text(content));
   }
 
   static Widget bntComTexto(String text, VoidCallback onTap,
