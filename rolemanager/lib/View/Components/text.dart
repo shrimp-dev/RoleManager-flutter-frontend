@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:teste/Utils/Extensions/stringExtension.dart';
+import 'package:rolemanager/Utils/Extension/stringExtension.dart';
 
 class TextComplexed {
   static Widget colorAndFontText(String text, String hexColor, double size) {

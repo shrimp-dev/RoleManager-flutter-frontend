@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:teste/Root/InitialApp.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:rolemanager/Root/root.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MainRoot());
 }

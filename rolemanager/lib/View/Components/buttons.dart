@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-
-import '../../Utils/Extensions/textExtension.dart';
+import 'package:rolemanager/Utils/Extension/textExtension.dart';
 
 class Button {
   final bntPostStyle = ElevatedButton.styleFrom(

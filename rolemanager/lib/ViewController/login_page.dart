@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class LoginViewController extends StatefulWidget {
   const LoginViewController({Key? key}) : super(key: key);
@@ -9,10 +9,7 @@ class LoginViewController extends StatefulWidget {
 
 class _LoginViewControllerState extends State<LoginViewController> {
   @override
-  void initState() => super.initState();
-
-  @override
   Widget build(BuildContext context) {
-    return const Text("teste");
+    return const Text("Oi");
   }
 }
