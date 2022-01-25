@@ -19,7 +19,6 @@ class ImagesContainer {
       child: Image.network(
         urlImage,
         width: width,
-        height: heigth,
       ),
     );
   }
