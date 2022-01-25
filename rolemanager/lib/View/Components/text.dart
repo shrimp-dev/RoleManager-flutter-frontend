@@ -1,7 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import 'package:teste/Utils/Extensions/stringExtension.dart';
+import 'package:rolemanager/Utils/Extension/stringExtension.dart';
 
-class TextPosicioned {
+class TextComplexed {
+  static Widget colorAndFontText(String text, String hexColor, double size) {
+    return Text(
+      text,
+      style: TextStyle(color: hexColor.toColor(), fontSize: size),
+    );
+  }
+
   static Positioned posicionedText(String text, double size, String hexColor,
       {double? top, double? bottom, double? left, double? rigth}) {
     return Positioned(

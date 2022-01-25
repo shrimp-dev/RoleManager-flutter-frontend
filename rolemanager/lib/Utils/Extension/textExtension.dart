@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:teste/Utils/Extensions/stringExtension.dart';
+import 'package:rolemanager/Utils/Extension/stringExtension.dart';
 
 extension TextExtension on Text {
   static Text textColor(String text, String hexColor, double size) {
