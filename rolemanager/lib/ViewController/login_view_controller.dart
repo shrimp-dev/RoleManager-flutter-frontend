@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rolemanager/View/Pages/login_page.dart';
 
 class LoginViewController extends StatefulWidget {
   const LoginViewController({Key? key}) : super(key: key);
@@ -10,6 +11,6 @@ class LoginViewController extends StatefulWidget {
 class _LoginViewControllerState extends State<LoginViewController> {
   @override
   Widget build(BuildContext context) {
-    return const Text("Oi");
+    return LoginPage.containerPage();
   }
 }

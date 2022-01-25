@@ -8,14 +8,14 @@ class ImagesContainer {
     double marginTop = 20,
     double marginDown = 20,
     double marginLeft = 20,
-    double marginRigth = 20,
+    double marginheight = 20,
   }) {
     return Container(
       margin: EdgeInsets.only(
           top: marginTop,
           bottom: marginDown,
           left: marginLeft,
-          right: marginRigth),
+          right: marginheight),
       child: Image.network(
         urlImage,
         width: width,

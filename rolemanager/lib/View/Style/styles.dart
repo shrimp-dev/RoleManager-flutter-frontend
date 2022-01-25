@@ -20,13 +20,15 @@ class Styles {
         borderRadius: BorderRadius.circular(numeroRaius));
   }
 
-  static LinearGradient EzyGradient(List<Color> listColors, TileMode tileMode,
-      Alignment? begin, Alignment? end) {
+  // ignore: non_constant_identifier_names
+  static LinearGradient EzyGradient(List<Color> listColors,
+      {TileMode? tileMode, Alignment? begin, Alignment? end}) {
+    // ignore: todo
     //TODO: Study rest of gradients for doing better this...
 
     return LinearGradient(
         colors: listColors,
-        tileMode: tileMode,
+        tileMode: tileMode ?? TileMode.clamp,
         begin: begin ?? Alignment.topCenter,
         end: end ?? Alignment.bottomCenter);
   }
