@@ -9,8 +9,21 @@ class LoginViewController extends StatefulWidget {
 }
 
 class _LoginViewControllerState extends State<LoginViewController> {
+  late TextEditingController _controller;
+  late TextEditingController _secretController;
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+    _secretController = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return LoginPage.containerPage();
+    return LoginPage.listViewPage(_controller, _secretController, () {
+      print("Login: ${_controller.text} / Senha: ${_secretController.text}");
+    }, () {
+      print("Chamar nova tela");
+    });
   }
 }
