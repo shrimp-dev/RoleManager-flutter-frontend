@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:rolemanager/Utils/Internacionalization/internacionalization.dart';
 import 'package:rolemanager/Utils/globalVariables/photo_url.dart';
@@ -21,7 +23,8 @@ class LoginPage {
             isVisible: isVisible),
         Padding(
           padding: const EdgeInsets.all(26),
-          child: btn.btnPost("Logar", onTapLogin),
+          child: btn.btnPost(
+              Ln10.trans(LN10.ptbr, ENUM_INTER.lbbuttonlogin), onTapLogin),
         ),
         _invitationTextLogin(),
         _btnInvite(onTapInvite)
@@ -41,11 +44,10 @@ class LoginPage {
   }
 
   static Widget _loginText() {
-    Ln10 ln = Ln10();
     return Padding(
       padding: const EdgeInsets.only(top: 40, left: 60, right: 40),
       child: Text(
-        ln.trans(LN10.ptbr, ENUM_INTER.lbapresentationLogin),
+        Ln10.trans(LN10.ptbr, ENUM_INTER.lbapresentationlogin),
         style:
             const TextStyle(fontSize: 24, backgroundColor: Color(0x0007004d)),
       ),
@@ -56,9 +58,9 @@ class LoginPage {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: TextFormField(
-        decoration: const InputDecoration(
-          labelText: "Email",
-          border: OutlineInputBorder(),
+        decoration: InputDecoration(
+          labelText: Ln10.trans(LN10.ptbr, ENUM_INTER.lbapresentationlogin),
+          border: const OutlineInputBorder(),
         ),
         controller: controller,
       ),
@@ -81,7 +83,7 @@ class LoginPage {
                 : const Icon(Icons.visibility),
             onPressed: onPressed,
           ),
-          labelText: "Senha",
+          labelText: Ln10.trans(LN10.ptbr, ENUM_INTER.lbpassinpult),
           border: const OutlineInputBorder(),
         ),
         controller: controller,
@@ -90,11 +92,10 @@ class LoginPage {
   }
 
   static Widget _invitationTextLogin() {
-    Ln10 ln = Ln10();
     return Padding(
       padding: const EdgeInsets.only(top: 40, left: 60, right: 40),
       child: Text(
-        ln.trans(LN10.ptbr, ENUM_INTER.lbinvitationLogin),
+        Ln10.trans(LN10.ptbr, ENUM_INTER.lbinvitationlogin),
         style:
             const TextStyle(fontSize: 12, backgroundColor: Color(0x0007004d)),
       ),
@@ -102,14 +103,12 @@ class LoginPage {
   }
 
   static Widget _btnInvite(VoidCallback onTap) {
-    Ln10 ln = Ln10();
-
     return InkWell(
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.only(top: 10, left: 150, right: 80),
           child: Text(
-            ln.trans(LN10.ptbr, ENUM_INTER.buttonLogin),
+            Ln10.trans(LN10.ptbr, ENUM_INTER.buttonloginInvitation),
             style: const TextStyle(
                 fontSize: 12, backgroundColor: Color(0x0007004d)),
           ),
