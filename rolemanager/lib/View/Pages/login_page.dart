@@ -1,7 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:rolemanager/Utils/Internacionalization/internacionalization.dart';
+import 'package:rolemanager/Utils/globalVariables/photo_url.dart';
 import 'package:rolemanager/View/Components/buttons.dart';
 
 class LoginPage {
@@ -9,14 +8,17 @@ class LoginPage {
       TextEditingController controller,
       TextEditingController secretController,
       VoidCallback onTapLogin,
-      VoidCallback onTapInvite) {
+      VoidCallback onTapInvite,
+      VoidCallback onTapVisibility,
+      bool isVisible) {
     Button btn = Button();
     return ListView(
       children: [
         _logo(),
         _loginText(),
         _inpultTextFild(controller),
-        _inpultTextFildSecret(secretController),
+        _inpultTextFildSecret(secretController, onTapVisibility,
+            isVisible: isVisible),
         Padding(
           padding: const EdgeInsets.all(26),
           child: btn.btnPost("Logar", onTapLogin),
@@ -31,7 +33,7 @@ class LoginPage {
     return Padding(
       padding: const EdgeInsets.only(top: 50),
       child: Image.network(
-        'https://cdn.discordapp.com/attachments/933366459827097611/935690236577595433/97647654.png',
+        PhotoUrl.logoURL,
         width: 96,
         height: 96,
       ),
@@ -63,14 +65,24 @@ class LoginPage {
     );
   }
 
-  static Widget _inpultTextFildSecret(TextEditingController controller) {
+  static Widget _inpultTextFildSecret(
+      TextEditingController controller, VoidCallback onPressed,
+      {bool isVisible = true}) {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: TextFormField(
-        obscureText: true,
-        decoration: const InputDecoration(
+        autocorrect: false,
+        obscureText: isVisible,
+        decoration: InputDecoration(
+          suffixIcon: IconButton(
+            iconSize: 20,
+            icon: isVisible
+                ? const Icon(Icons.visibility_off)
+                : const Icon(Icons.visibility),
+            onPressed: onPressed,
+          ),
           labelText: "Senha",
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
         ),
         controller: controller,
       ),
