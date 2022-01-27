@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:rolemanager/Utils/Internacionalization/internacionalization.dart';
 import 'package:rolemanager/Utils/globalVariables/photo_url.dart';
