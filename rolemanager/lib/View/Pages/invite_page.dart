@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rolemanager/Utils/Internacionalization/internacionalization.dart';
+import 'package:rolemanager/Utils/globalVariables/photo_url.dart';
 import 'package:rolemanager/View/Components/strokes.dart';
 
 class InvateModal {
@@ -8,12 +9,29 @@ class InvateModal {
       TextEditingController _controller,
       VoidCallback onPressedFirst,
       VoidCallback onPressedSecound) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return _modalDialog(
-              context, _controller, onPressedFirst, onPressedSecound);
-        });
+    return SafeArea(
+        child: ListView(
+      children: [
+        _invateTitleLabelModalText(),
+        Padding(
+          padding:
+              const EdgeInsets.only(top: 40, left: 20, right: 20, bottom: 20),
+          child: Image.network(PhotoUrl.invitePicure),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 4, left: 20, right: 20),
+          child: _invateLabelModalText(),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+          child: _inpultTextFormFild(_controller),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
+          child: _RowButton(onPressedFirst, onPressedSecound),
+        )
+      ],
+    ));
   }
 
   static Widget _RowButton(
@@ -30,14 +48,14 @@ class InvateModal {
   static Widget _ElevatedButton(VoidCallback onPressed) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: const Text("teste"),
+      child: Text(Ln10.trans(LN10.ptbr, ENUM_INTER.buttoninvitesucess)),
     );
   }
 
   static Widget _outPutButton(VoidCallback onPressed) {
     return OutlinedButton(
       onPressed: onPressed,
-      child: const Text("teste"),
+      child: Text(Ln10.trans(LN10.ptbr, ENUM_INTER.buttoninvitecancel)),
     );
   }
 
@@ -49,8 +67,8 @@ class InvateModal {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Container(
-        width: 300,
-        height: 300,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(20),
         child: ListView(
           children: [
@@ -75,11 +93,11 @@ class InvateModal {
 
   static Widget _invateTitleLabelModalText() {
     return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
       child: Text(
         Ln10.trans(LN10.ptbr, ENUM_INTER.lbmodalivite),
         style:
-            const TextStyle(fontSize: 18, backgroundColor: Color(0x0007004d)),
+            const TextStyle(fontSize: 26, backgroundColor: Color(0x0007004d)),
       ),
     );
   }

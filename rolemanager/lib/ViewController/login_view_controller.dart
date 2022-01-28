@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rolemanager/View/Pages/invite_page.dart';
 import 'package:rolemanager/View/Pages/login_page.dart';
+import 'package:rolemanager/ViewController/invitation_view_controller.dart';
 
 class LoginViewController extends StatefulWidget {
   const LoginViewController({Key? key}) : super(key: key);
@@ -12,20 +12,21 @@ class LoginViewController extends StatefulWidget {
 class _LoginViewControllerState extends State<LoginViewController> {
   late TextEditingController _controller;
   late TextEditingController _secretController;
-  late TextEditingController _modalController;
   bool _isVisibility = true;
   @override
   void initState() {
     super.initState();
     _controller = TextEditingController();
     _secretController = TextEditingController();
-    _modalController = TextEditingController();
   }
 
   @override
   Widget build(BuildContext context) {
     return LoginPage.listViewPage(_controller, _secretController, () {}, () {
-      InvateModal.showDialogModal(context, _modalController, () {}, () {});
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const InvitationViewController()));
     }, () {
       setState(() {
         _isVisibility = !_isVisibility;
