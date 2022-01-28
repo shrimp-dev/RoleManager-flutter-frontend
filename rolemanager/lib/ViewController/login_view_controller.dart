@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rolemanager/View/Pages/login_page.dart';
+import 'package:rolemanager/ViewController/invitation_view_controller.dart';
 
 class LoginViewController extends StatefulWidget {
   const LoginViewController({Key? key}) : super(key: key);
@@ -21,8 +22,12 @@ class _LoginViewControllerState extends State<LoginViewController> {
 
   @override
   Widget build(BuildContext context) {
-    return LoginPage.listViewPage(_controller, _secretController, () {}, () {},
-        () {
+    return LoginPage.listViewPage(_controller, _secretController, () {}, () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const InvitationViewController()));
+    }, () {
       setState(() {
         _isVisibility = !_isVisibility;
       });

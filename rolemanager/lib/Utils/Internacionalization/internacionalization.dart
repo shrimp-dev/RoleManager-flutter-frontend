@@ -6,7 +6,12 @@ enum ENUM_INTER {
   buttonloginInvitation,
   lbbuttonlogin,
   lbmailinpult,
-  lbpassinpult
+  lbpassinput,
+  lbmodalivite,
+  lbtextmodalinvite,
+  buttoninvitecancel,
+  buttoninvitesucess,
+  txterroinviteinput
 }
 
 class Ln10 {
@@ -33,8 +38,18 @@ class Ln10 {
         return "Logar com sua conta!";
       case ENUM_INTER.lbmailinpult:
         return "Email";
-      case ENUM_INTER.lbpassinpult:
+      case ENUM_INTER.lbpassinput:
         return "Senha";
+      case ENUM_INTER.lbmodalivite:
+        return "Entrar com um convite";
+      case ENUM_INTER.lbtextmodalinvite:
+        return "Insira o código do seu convite";
+      case ENUM_INTER.buttoninvitecancel:
+        return "Cancelar";
+      case ENUM_INTER.buttoninvitesucess:
+        return "Concluir";
+      case ENUM_INTER.txterroinviteinput:
+        return "Você não inseriu nenhum código";
     }
   }
 
@@ -51,8 +66,18 @@ class Ln10 {
         return "Log in with your account!";
       case ENUM_INTER.lbmailinpult:
         return "Email";
-      case ENUM_INTER.lbpassinpult:
+      case ENUM_INTER.lbpassinput:
         return "Password";
+      case ENUM_INTER.lbmodalivite:
+        return "Sign in with an invite";
+      case ENUM_INTER.lbtextmodalinvite:
+        return "Enter your invitation code";
+      case ENUM_INTER.buttoninvitecancel:
+        return "Cancel";
+      case ENUM_INTER.buttoninvitesucess:
+        return "Conclude";
+      case ENUM_INTER.txterroinviteinput:
+        return "You have not entered any code";
     }
   }
 }

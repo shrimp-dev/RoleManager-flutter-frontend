@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:rolemanager/Utils/Internacionalization/internacionalization.dart';
 import 'package:rolemanager/Utils/globalVariables/photo_url.dart';
@@ -83,7 +81,7 @@ class LoginPage {
                 : const Icon(Icons.visibility),
             onPressed: onPressed,
           ),
-          labelText: Ln10.trans(LN10.ptbr, ENUM_INTER.lbpassinpult),
+          labelText: Ln10.trans(LN10.ptbr, ENUM_INTER.lbpassinput),
           border: const OutlineInputBorder(),
         ),
         controller: controller,

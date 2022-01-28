@@ -8,19 +8,17 @@ class Inputs {
       obscureText: isPass,
       decoration: InputDecoration(
         labelText: placeholder,
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
       ),
     );
   }
 
   static Widget inputClassico(
-      //TODO: Ajeitar o input
-      String placeholder,
-      TextEditingController _controller) {
+      String placeholder, TextEditingController _controller) {
     return TextField(
       controller: _controller,
-      decoration:
-          InputDecoration(border: OutlineInputBorder(), hintText: placeholder),
+      decoration: InputDecoration(
+          border: const OutlineInputBorder(), hintText: placeholder),
     );
   }
 
@@ -37,7 +35,7 @@ class Inputs {
           obscureText: isTextPass ?? false,
           controller: _controller,
           decoration: InputDecoration(
-              border: OutlineInputBorder(), hintText: placeholder),
+              border: const OutlineInputBorder(), hintText: placeholder),
         ));
   }
 }
