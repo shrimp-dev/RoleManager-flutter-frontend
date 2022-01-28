@@ -16,7 +16,7 @@ class InvateModal {
         Padding(
           padding:
               const EdgeInsets.only(top: 40, left: 20, right: 20, bottom: 20),
-          child: Image.network(PhotoUrl.invitePicure),
+          child: Image.network(PhotoUrl.invitePicture),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 4, left: 20, right: 20),
