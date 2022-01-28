@@ -10,7 +10,8 @@ enum ENUM_INTER {
   lbmodalivite,
   lbtextmodalinvite,
   buttoninvitecancel,
-  buttoninvitesucess
+  buttoninvitesucess,
+  txterroinviteinput
 }
 
 class Ln10 {
@@ -47,6 +48,8 @@ class Ln10 {
         return "Cancelar";
       case ENUM_INTER.buttoninvitesucess:
         return "Concluir";
+      case ENUM_INTER.txterroinviteinput:
+        return "Você não inseriu nenhum código";
     }
   }
 
@@ -73,6 +76,8 @@ class Ln10 {
         return "Cancel";
       case ENUM_INTER.buttoninvitesucess:
         return "Conclude";
+      case ENUM_INTER.txterroinviteinput:
+        return "You have not entered any code";
     }
   }
 }

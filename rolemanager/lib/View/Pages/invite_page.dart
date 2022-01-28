@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:rolemanager/Utils/Internacionalization/internacionalization.dart';
 import 'package:rolemanager/Utils/globalVariables/photo_url.dart';
-import 'package:rolemanager/View/Components/strokes.dart';
 
 class InvateModal {
   static showDialogModal(
       BuildContext context,
       TextEditingController _controller,
       VoidCallback onPressedFirst,
-      VoidCallback onPressedSecound) {
+      VoidCallback onPressedSecound,
+      bool _validationInpult) {
     return SafeArea(
         child: ListView(
       children: [
@@ -24,10 +24,10 @@ class InvateModal {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-          child: _inpultTextFormFild(_controller),
+          child: _inpultTextFormFild(_controller, validate: _validationInpult),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
+          padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
           child: _RowButton(onPressedFirst, onPressedSecound),
         )
       ],
@@ -59,38 +59,6 @@ class InvateModal {
     );
   }
 
-  static Widget _modalDialog(
-      BuildContext context,
-      TextEditingController _controller,
-      VoidCallback onPressedFirst,
-      onPressedSecondButton) {
-    return Dialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.all(20),
-        child: ListView(
-          children: [
-            _invateTitleLabelModalText(),
-            const Padding(
-              padding: EdgeInsets.only(left: 40, top: 4),
-              child: MySeparator(
-                color: Colors.black,
-              ),
-            ),
-            _invateLabelModalText(),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: _inpultTextFormFild(_controller),
-            ),
-            _RowButton(onPressedFirst, onPressedSecondButton)
-          ],
-        ),
-      ),
-    );
-  }
-
   static Widget _invateTitleLabelModalText() {
     return Padding(
       padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
@@ -102,11 +70,17 @@ class InvateModal {
     );
   }
 
-  static Widget _inpultTextFormFild(TextEditingController _controller) {
-    return TextField(
+  static Widget _inpultTextFormFild(TextEditingController _controller,
+      {bool validate = false}) {
+    return TextFormField(
+      autocorrect: false,
       controller: _controller,
-      decoration:
-          const InputDecoration(border: OutlineInputBorder(), hintText: ""),
+      decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          hintText: "",
+          errorText: validate
+              ? Ln10.trans(LN10.ptbr, ENUM_INTER.txterroinviteinput)
+              : null),
     );
   }
 
