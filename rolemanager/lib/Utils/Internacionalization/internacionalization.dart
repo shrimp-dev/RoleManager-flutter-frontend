@@ -6,7 +6,7 @@ enum ENUM_INTER {
   buttonloginInvitation,
   lbbuttonlogin,
   lbmailinpult,
-  lbpassinpult,
+  lbpassinput,
   lbmodalivite,
   lbtextmodalinvite,
   buttoninvitecancel,
@@ -38,7 +38,7 @@ class Ln10 {
         return "Logar com sua conta!";
       case ENUM_INTER.lbmailinpult:
         return "Email";
-      case ENUM_INTER.lbpassinpult:
+      case ENUM_INTER.lbpassinput:
         return "Senha";
       case ENUM_INTER.lbmodalivite:
         return "Entrar com um convite";
@@ -66,7 +66,7 @@ class Ln10 {
         return "Log in with your account!";
       case ENUM_INTER.lbmailinpult:
         return "Email";
-      case ENUM_INTER.lbpassinpult:
+      case ENUM_INTER.lbpassinput:
         return "Password";
       case ENUM_INTER.lbmodalivite:
         return "Sign in with an invite";
