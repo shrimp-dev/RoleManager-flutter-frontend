@@ -10,15 +10,16 @@ class LoginPage {
       VoidCallback onTapLogin,
       VoidCallback onTapInvite,
       VoidCallback onTapVisibility,
-      bool isVisible) {
+      bool isVisible,
+      bool validator) {
     Button btn = Button();
     return ListView(
       children: [
         _logo(),
         _loginText(),
-        _inpultTextFild(controller),
+        _inpultTextFild(controller, validator: validator),
         _inpultTextFildSecret(secretController, onTapVisibility,
-            isVisible: isVisible),
+            isVisible: isVisible, validator: validator),
         Padding(
           padding: const EdgeInsets.all(26),
           child: btn.btnPost(
@@ -52,11 +53,15 @@ class LoginPage {
     );
   }
 
-  static Widget _inpultTextFild(TextEditingController controller) {
+  static Widget _inpultTextFild(TextEditingController controller,
+      {validator = false}) {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: TextFormField(
         decoration: InputDecoration(
+          errorText: validator
+              ? Ln10.trans(LN10.ptbr, ENUM_INTER.txtwrongemailpass)
+              : null,
           labelText: Ln10.trans(LN10.ptbr, ENUM_INTER.lbapresentationlogin),
           border: const OutlineInputBorder(),
         ),
@@ -67,13 +72,16 @@ class LoginPage {
 
   static Widget _inpultTextFildSecret(
       TextEditingController controller, VoidCallback onPressed,
-      {bool isVisible = true}) {
+      {bool isVisible = true, bool validator = false}) {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: TextFormField(
         autocorrect: false,
         obscureText: isVisible,
         decoration: InputDecoration(
+          errorText: validator
+              ? Ln10.trans(LN10.ptbr, ENUM_INTER.txtwrongemailpass)
+              : null,
           suffixIcon: IconButton(
             iconSize: 20,
             icon: isVisible
