@@ -11,7 +11,8 @@ enum ENUM_INTER {
   lbtextmodalinvite,
   buttoninvitecancel,
   buttoninvitesucess,
-  txterroinviteinput
+  txterroinviteinput,
+  txtwrongemailpass
 }
 
 class Ln10 {
@@ -50,6 +51,8 @@ class Ln10 {
         return "Concluir";
       case ENUM_INTER.txterroinviteinput:
         return "Você não inseriu nenhum código";
+      case ENUM_INTER.txtwrongemailpass:
+        return "Email ou senha incorreto";
     }
   }
 
@@ -78,6 +81,8 @@ class Ln10 {
         return "Conclude";
       case ENUM_INTER.txterroinviteinput:
         return "You have not entered any code";
+      case ENUM_INTER.txtwrongemailpass:
+        return "Incorrect email or password";
     }
   }
 }

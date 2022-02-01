@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rolemanager/Controllers/login_controller.dart';
 import 'package:rolemanager/View/Pages/login_page.dart';
 import 'package:rolemanager/ViewController/invitation_view_controller.dart';
 
@@ -13,6 +14,7 @@ class _LoginViewControllerState extends State<LoginViewController> {
   late TextEditingController _controller;
   late TextEditingController _secretController;
   bool _isVisibility = true;
+  bool _validator = false;
   @override
   void initState() {
     super.initState();
@@ -22,7 +24,13 @@ class _LoginViewControllerState extends State<LoginViewController> {
 
   @override
   Widget build(BuildContext context) {
-    return LoginPage.listViewPage(_controller, _secretController, () {}, () {
+    return LoginPage.listViewPage(_controller, _secretController, () {
+      setState(() {
+        _validator = LoginController.isEmailValid(_controller, _validator);
+        _validator =
+            LoginController.isPassHasError(_secretController, _validator);
+      });
+    }, () {
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -31,6 +39,6 @@ class _LoginViewControllerState extends State<LoginViewController> {
       setState(() {
         _isVisibility = !_isVisibility;
       });
-    }, _isVisibility);
+    }, _isVisibility, _validator);
   }
 }
