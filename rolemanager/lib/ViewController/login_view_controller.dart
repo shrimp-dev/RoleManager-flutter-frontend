@@ -28,7 +28,7 @@ class _LoginViewControllerState extends State<LoginViewController> {
       setState(() {
         _validator = LoginController.isEmailValid(_controller, _validator);
         _validator =
-            LoginController.isPasswordValid(_secretController, _validator);
+            LoginController.isPassHasError(_secretController, _validator);
       });
     }, () {
       Navigator.push(

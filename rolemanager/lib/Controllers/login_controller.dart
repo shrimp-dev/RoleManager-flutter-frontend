@@ -11,7 +11,7 @@ class LoginController {
   }
 
   static bool isEmailValid(TextEditingController _controller, bool _validator) {
-    final emailRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    final emailRegExp = RegExp(r"^[a-zA-Z0-9._]+@[a-zA-Z0-9]+.[a-zA-Z]+");
     bool isEmailValidVarieble = emailRegExp.hasMatch(_controller.text);
 
     if (isEmailValidVarieble != true || _controller.text.isEmpty) {
@@ -31,7 +31,7 @@ class LoginController {
     return hasUppercase & hasDigits & hasLowercase & hasSpecialCharacters;
   }
 
-  static bool isPasswordValid(
+  static bool isPassHasError(
       TextEditingController _controller, bool _validator) {
     if (_controller.text.length < 8) {
       return true;
